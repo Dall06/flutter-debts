@@ -29,11 +29,12 @@ import 'package:flutter/material.dart';
 
 const Color green = Color(0xFF456350);
 const Color greenL = Color(0xFF7f9486);
-const Color dark = Color(0xFF151515);
-const Color darkM = Color(0xFF171b17);
-const Color darkL = Color(0xFF1C1C1C);
+const Color dark = Color(0xFF131313);
+const Color darkM = Color(0xFF181818);
+const Color darkL = Color(0xFF1F1F1F);
 const Color gray = Color(0xFF8b8b8b);
-const Color white = Color(0xffbbbbbb);
+const Color whiteM = Color(0xffbbbbbb);
+const Color white = Color(0xffffffff);
 
 abstract class MyThemesRepository {
   ThemeData darkTheme();
@@ -46,16 +47,23 @@ class MyThemes implements MyThemesRepository {
     primary: green,
     secondary: greenL,
     background: dark,
-    tertiary: darkL,
+    onBackground: darkM,
+    onSurface: darkL,
   );
 
   final TextTheme textTheme = const TextTheme(
-    displayLarge: TextStyle(color: white, fontSize: 26),
-    displayMedium: TextStyle(color: white, fontSize: 20,),
-    displaySmall: TextStyle(color: white, fontSize: 16),
-    bodyLarge: TextStyle(color: gray, fontSize: 16),
-    bodyMedium: TextStyle(color: gray, fontSize: 14),
-    bodySmall: TextStyle(color: gray, fontSize: 10),
+    headlineLarge: TextStyle(color: whiteM, fontSize: 26, fontWeight: FontWeight.bold),
+    headlineMedium: TextStyle(color: whiteM, fontSize: 24, fontWeight: FontWeight.bold),
+    headlineSmall: TextStyle(color: whiteM, fontSize: 22, fontWeight: FontWeight.bold),
+    labelLarge: TextStyle(color: whiteM, fontSize: 20, fontWeight: FontWeight.bold),
+    labelMedium: TextStyle(color: whiteM, fontSize: 18, fontWeight: FontWeight.bold),
+    labelSmall: TextStyle(color: whiteM, fontSize: 16, fontWeight: FontWeight.bold),
+    displayLarge: TextStyle(color: whiteM, fontSize: 18),
+    displayMedium: TextStyle(color: gray, fontSize: 16,),
+    displaySmall: TextStyle(color: gray, fontSize: 14),
+    bodyLarge: TextStyle(color: Colors.white, fontSize: 18),
+    bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
+    bodySmall: TextStyle(color: Colors.white, fontSize: 12),
   );
 
   @override
